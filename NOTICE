@@ -1,0 +1,16 @@
+   CANOPNR - (CAN-OBD Programmable-expandable Network-enabled Reader) 
+   Copyright 2012  Jose Denrie Enriquez, Alex Bautista, Paloma Field, Sun-il Kim
+
+   Portions of this software were derived from existing work as noted below, and
+   outlined in detail in each corresponding file.
+
+---------------------------------------------------------------------------------------------------
+
+  Project files for CANOPNR v1.0:
+  README
+  CANOPNR.ino
+  MCP2515.h   (based on work of Frank Kienast)
+  MCP2515.cpp (based on work of Frank Kienast)
+  mcp2515_defs.h (Verbatim copy of the work of Fabian Greif, Roboterclub Aachen e.V.)
+  *LICENSE
+  *NOTICE

@@ -1,0 +1,55 @@
+   This file is included as part of the CANOPNR distribution. 
+   You are free to use this project as you see fit, provided credit is given to all 
+   contributors (original and subsequent).
+   
+   Copyright 2012  Jose Denrie Enriquez, Alex Bautista, Paloma Field, Sun-il Kim
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+---------------------------------------------------------------------------------------------------
+
+   The goal of this tool is to provide open-source software to help
+   facilitate other projects that require the use of the
+   information available via CAN, with special contributions
+   in dealing with ABS-related information (which is not readily
+   available from the manufacturers) and the optimiztion for
+   accuracy in detection wheel slippage.  The projcet is based on 
+   the use of the Arduino Uno unit along with a CAN-Bus unit and a GPRS shield.  
+   The implementation can be modified to adapt to the needs of individual 
+   projects with due credit given to the original project(s) and authors.
+   
+-----------------------------------------------------------------------------------------------
+
+Note: Since the original MCP2515 Library was created by Frank Kienast, it has been 
+modified for use in the CANOPNR (CAN-OBD Programmable-expandable Network-enabled Reader)
+for remotely collecting vehicular parameters via CAN.
+
+The modifications include:
+(1) CANOPNR_MCP2525.cpp 
+  -Added 7 new methods:
+     1. boolean MCP2515::setSleepMode()
+     2. boolean MCP2515::isAwake()
+     3. boolean MCP2515::getMSG(CANMSG *msg, unsigned long timeout, unsigned long message_addr)
+     4. boolean MCP2515::SNIFF_ALL(CANMSG *msg)
+     5. boolean MCP2515::CANSNIFF(CANMSG *msg, unsigned short address, unsigned long timeout)
+     6. boolean MCP2515::receiveCANMessage(CANMSG *msg, unsigned long timeout)
+     7. long MCP2515::queryOBD(unsigned char pid, char *buffer)
+  -Modified 1 existing method:
+     1. boolean MCP2515::setCANNormalMode()
+
+(2) CANOPNR_MCP2525.h
+  -Modified 1 existing class:
+     1. class MCP2515
+
+
+
